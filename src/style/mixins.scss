@@ -1,0 +1,22 @@
+@mixin general {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@mixin container {
+    width: 70%;
+    margin: auto;
+}
+
+@mixin list-style-none {
+    ul {
+        list-style: none;
+        li {
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,9 +1,13 @@
 <template>
   <main>
     <div class="top">
-        <div class="container">
-            <h1>Main top</h1>
-        </div>
+        <ul class="container">
+            <ComicCard
+                v-for="(comic, index) in comics"
+                :key= "index"
+                :comicCard= "comic"
+            />
+        </ul>
     </div>
     <div class="bottom">
         <div class="container">
@@ -14,8 +18,19 @@
 </template>
 
 <script>
+import comics from "@/data/dc-comics.json";
+import ComicCard from "./ComicCard"
+
 export default {
-  name: 'Main',
+    name: 'Main',
+    components: {
+        ComicCard
+    },
+    data() {
+        return {
+            comics
+        }
+    }
 }
 </script>
 
@@ -34,11 +49,13 @@ main {
         background-color: $blue;
         color: white;
     }
+    
+    @include list-style-none;
     .container {
-    @include container;
-    display: flex;
-    align-items: center;
-    height: 100px;
+        @include container;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
     }
 }
 </style>

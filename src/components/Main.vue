@@ -41,7 +41,7 @@ export default {
 main {
     .top {
         padding: 20px 0;
-        background-color: black;
+        background-color: rgb(29, 29, 29);
         color: white;
     }
     .bottom {
@@ -54,7 +54,6 @@ main {
     .container {
         @include container;
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
     }
 }

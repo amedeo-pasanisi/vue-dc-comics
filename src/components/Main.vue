@@ -1,36 +1,22 @@
 <template>
   <main>
-    <div class="top">
-        <ul class="container">
-            <ComicCard
-                v-for="(comic, index) in comics"
-                :key= "index"
-                :comicCard= "comic"
-            />
-        </ul>
-    </div>
-    <div class="bottom">
+    <MainTop />
+    <section class="bottom">
         <div class="container">
             <h1>Main bottom</h1>
         </div>
-    </div>
+    </section>
   </main>
 </template>
 
 <script>
-import comics from "@/data/dc-comics.json";
-import ComicCard from "./ComicCard"
+import MainTop from "./MainTop";
 
 export default {
     name: 'Main',
     components: {
-        ComicCard
+        MainTop
     },
-    data() {
-        return {
-            comics
-        }
-    }
 }
 </script>
 
@@ -39,22 +25,10 @@ export default {
 @import "../style/mixins";
 
 main {
-    .top {
-        padding: 20px 0;
-        background-color: rgb(29, 29, 29);
-        color: white;
-    }
     .bottom {
         padding: 20px 0;
         background-color: $blue;
         color: white;
-    }
-    
-    @include list-style-none;
-    .container {
-        @include container;
-        display: flex;
-        flex-wrap: wrap;
     }
 }
 </style>
